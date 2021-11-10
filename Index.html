@@ -20,13 +20,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="labelName" style="font-weight: 500;">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="namaL" placeholder="Masukkan Nama Lengkap">
+                                    <input type="text" class="form-control" name="name" id="namaL" placeholder="Masukkan Nama Lengkap">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="labelName" style="font-weight: 500;">Nama Panggilan</label>
-                                    <input type="text" class="form-control" id="namaP" placeholder="Masukkan Nama Panggilan">
+                                    <input type="text" class="form-control" name="name" id="namaP" placeholder="Masukkan Nama Panggilan">
                                 </div>
                             </div>
                         </div>
@@ -51,11 +51,11 @@
                                 <div class="col-sm-6">
                                     <label for="labelAgama" style="font-weight: 500;">Agama</label>
                                     <select class="form-control" name="agama">
-                                        <option name="agama" id="islam">Islam</option>
-                                        <option name="agama" id="kristen">Kristen</option>
-                                        <option name="agama" id="prost">Protestan</option>
-                                        <option name="agama" id="hindhu">Hindhu</option>
-                                        <option name="agama" id="budha">Budha</option>
+                                        <option name="agama" id="agama1" value="islam">Islam</option>
+                                        <option name="agama" id="agama2" value="kristen">Kristen</option>
+                                        <option name="agama" id="agama3" value="prost">Protestan</option>
+                                        <option name="agama" id="agama4" value="hindhu">Hindhu</option>
+                                        <option name="agama" id="agama5" value="budha">Budha</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-6">
@@ -63,13 +63,13 @@
                                     <div class ="row">
                                         <div class="col-sm-3" style="margin-left: 5%; margin-top:1%">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" value="male" name="gender">
+                                                <input class="form-check-input" type="radio" name="gender" id="Male" value="male" >
                                                 <label class="form-check-label">Laki-laki</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-3"style="margin-left: 5%; margin-top:1%">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" value="female" name="gender">
+                                                <input class="form-check-input" type="radio" name="gender" id="Female" value="female" >
                                                 <label class="form-check-label">Perempuan</label>
                                             </div>
                                         </div>
@@ -88,18 +88,18 @@
                             <div class="col-sm-3">
                               <div class="form-group">
                                   <label for="labelEd" style="font-weight: 500;">Pendidikan Terakhir</label>
-                                  <select class="form-control">
-                                      <option>SMA/SMK/MA</option>
-                                      <option>Diploma 3 (D3)</option>
-                                      <option>Diploma 4 (D4)</option>
-                                      <option>Strata 1 (S1)</option>
+                                  <select class="form-control" name="pendidikan">
+                                      <option name="pendidikan" id="pend1" value="sma">SMA/SMK/MA</option>
+                                      <option name="pendidikan" id="pend2" value="d3">Diploma 3 (D3)</option>
+                                      <option name="pendidikan" id="pend3" value="d4">Diploma 4 (D4)</option>
+                                      <option name="pendidikan" id="pend4" value="s1">Strata 1 (S1)</option>
                                   </select>
                               </div>
                             </div>
                             <div class="col-sm-6">
                               <div class="form-group">
                                   <label for="labelSch-name" style="font-weight: 500;">Nama Sekolah/Universitas</label>
-                                    <input type="text" class="form-control" id="domisili" placeholder="Masukkan Nama Sekolah/Universitas">
+                                    <input type="text" class="form-control" id="schoolName" placeholder="Masukkan Nama Sekolah/Universitas">
                               </div>
                             </div>
                           </div>
@@ -109,25 +109,25 @@
                                 <tr>
                                     <td>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" name="progLang" id="c">
                                             <label class="form-check-label">C</label>
                                           </div>
                                     </td>
                                     <td>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" name="progLang" id="python">
                                             <label class="form-check-label">Python</label>
                                           </div>
                                     </td>
                                     <td>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" name="progLang" id="html">
                                             <label class="form-check-label">Html</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox">
+                                            <input class="form-check-input" type="checkbox" name="progLang" id="java">
                                             <label class="form-check-label">Java</label>
                                         </div>
                                     </td>
@@ -139,13 +139,13 @@
                                 <div class="col-sm-6">
                                     <label style="font-weight: 500;">Nomor Whatsapp</label>
                                     <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Masukkan nomor yang terhubung dengan whatsapp">
+                                    <input type="text" id="wa-num" class="form-control" placeholder="Masukkan nomor yang terhubung dengan whatsapp">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                   <label style="font-weight: 500;">Alamat Email</label>
                                   <div class="input-group mb-3">
-                                    <input type="text" class="form-control" id="domisili" placeholder="Masukkan Email">
+                                    <input type="text" id="mail" class="form-control" id="domisili" placeholder="Masukkan Email">
                                   </div>
                                 </div>
                             </div>
