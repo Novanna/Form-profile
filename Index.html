@@ -1,11 +1,14 @@
 <html>
     <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Biodata Form and Profile Card Project</title>
-        <meta charset="utf-8">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     </head>
 
     <body>
@@ -21,13 +24,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="labelName" style="font-weight: 500;">Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="name" id="namaL" placeholder="Masukkan Nama Lengkap">
+                                    <input type="text" class="form-control" id="namaL" placeholder="Masukkan Nama Lengkap">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="labelName" style="font-weight: 500;">Nama Panggilan</label>
-                                    <input type="text" class="form-control" name="name" id="namaP" placeholder="Masukkan Nama Panggilan">
+                                    <input type="text" class="form-control" id="namaP" placeholder="Masukkan Nama Panggilan">
                                 </div>
                             </div>
                         </div>
@@ -51,12 +54,12 @@
                             <div class="row" style="margin-bottom: 10px;">
                                 <div class="col-sm-6">
                                     <label for="labelAgama" style="font-weight: 500;">Agama</label>
-                                    <select class="form-control" name="agama">
-                                        <option name="agama" id="agama1" value="islam">Islam</option>
-                                        <option name="agama" id="agama2" value="kristen">Kristen</option>
-                                        <option name="agama" id="agama3" value="prost">Protestan</option>
-                                        <option name="agama" id="agama4" value="hindhu">Hindhu</option>
-                                        <option name="agama" id="agama5" value="budha">Budha</option>
+                                    <select class="form-control" name="agama" id="religion">
+                                        <option value="islam">Islam</option>
+                                        <option value="kristen">Kristen</option>
+                                        <option value="prost">Protestan</option>
+                                        <option value="hindhu">Hindhu</option>
+                                        <option value="budha">Budha</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-6">
@@ -162,24 +165,22 @@
                                 </div>
                             </div>
                         </div>
-                        
-
+                
                         <div class="card-footer">
-                          <button type="submit" class="btn btn-primary" id ="generatePreview" data-toggle="modal" data-target="#generateModal">Review</button>
+                          <button type="button" class="btn btn-primary" id="button" data-toggle="modal" data-target="#generateModal">Review</button>
                         </div>
-
-                        <div class="modal fade" id="generateModal" tabindex="-1" aria-hidden="true">
+                        <!--MODAL-->
+                        <div class="modal wrapper" id="generateModal">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h3 class="modal-title">Personal Card Preview</h3>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="card card-preview">
                                             <div class="card-body row">
-                                                <div class="col-2">
-                                                    <img id="photoCard" class="img-fluid" alt="">
+                                                <div class="col-4">
+                                                    <img id="ava" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="col-3">
                                                     <p class="mb-2">Nama Lengkap</p>
@@ -192,14 +193,14 @@
                                                     <p class="mb-2">Email</p>
                                                 </div>
                                                 <div class="col">
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userNamel"></span></p>
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userNamep"></span></p>
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userBirthplace"></span></p>
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userBod"></span></p>
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userGender"></span></p>
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userRelg"></span></p>
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userEduc"></span></p>
-                                                    <p class="mb-2"><span class="me-2">:</span><span id="userMail"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewNamel"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewNamep"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewBirthplace"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewBod"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewGender"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewRelg"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewEduc"></span></p>
+                                                    <p class="mb-2"><span class="me-2">:</span><span id="previewMail"></span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -213,25 +214,80 @@
                 </form>
             </div>
         </div>
-        
-         
-            <!-- // let userNamel = document.getElementById("namaL");
-            // let userNamep = document.getElementById("namaP");
-            // let userBirthplace = document.getElementById("birthplace");
-            // let userBod = document.getElementById("bod");
-            // let userRelg = document.getElementByName("agama");
-            // let userGender = document.getElemetByName("gender");
-            // let userLoc = document.getElementById("domisili");
-            // let userEduc = document.getElementByName("pendidikan");
-            // let userSchname = document.getElementById("schoolName");
-            // let userProglang = document.getElementByName("proglang");
-            // let whatsappNum = document.getElementById("wa-num");
-            // let userMail = document.getElementById("mail");
+        <script>
+            let openModalTrigger = document.getElementById("button");
 
-            // function cardGenerator() {
-            // alert(userNamel.value + " hai");
-            // $('#generateModal').modal('show');
-            // return;
-            // }  -->
+            openModalTrigger.addEventListener("click", openModal);
+
+            function openModal() {
+            document.getElementById("modal-wrapper").classList.add("visible");
+            generatePreview();
+            }
+
+            function generatePreview(){
+                let userNamel = document.getElementById("namaL").value;
+                let cardNamel = document.getElementById("previewNamel");
+                cardNamel.innerHTML = userNamel;
+
+                let userNamep = document.getElementById("namaP").value;
+                let cardNamep = document.getElementById("previewNamep");
+                cardNamep.innerHTML = userNamep;
+
+                let userBirthplace = document.getElementById("birthplace").value;
+                let cardBirthplace = document.getElementById("previewBirthplace");
+                cardBirthplace.innerHTML = userBirthplace;
+
+                let userBod = document.getElementById("bod").value;
+                let cardBod = document.getElementById("previewBod");
+                cardBod.innerHTML = userBod;
+
+                let userRelg = document.getElementByName("agama").value;
+                let cardRelg = document.getElementById("previewRelg");
+                cardRelg.innerHTML = userRelg;
+
+                let userGender = document.getElemetByName("gender").value;
+                let cardGender = document.getElementById("previewGender");
+                cardGender.innerHTML = userGender;
+
+                let userLoc = document.getElementById("domisili").value;
+                let cardLoc = document.getElementById("previewLoc");
+                cardLoc.innerHTML = userLoc;
+
+                let userEduc = document.getElementByName("pendidikan").value;
+                let cardEduc = document.getElementById("previewEduc");
+                cardEduc.innerHTML = userEduc;
+
+                let userSchname = document.getElementById("schoolName").value;
+                let cardSchname = document.getElementById("previewSchname");
+                cardSchname.innerHTML = userSchname;
+
+                let userProglang = document.getElementByName("proglang").value;
+                let cardProglang = document.getElementById("previewProglang");
+                cardProglang.innerHTML = userProglang;
+
+                let userWanum = document.getElementById("wa-num").value;
+                let cardWanum = document.getElementById("previewWanum");
+                cardWanum.innerHTML = userWanum;
+
+                let userMail = document.getElementById("mail").value;
+                let cardMail = document.getElementById("previewMail");
+                cardMail.innerHTML = userMail;
+
+                let userAva = document.getElementById("ava").value;
+                let cardAva = document.getElementById("previewAva");
+                cardAva.setAttribute("src","img/" + userAva.split("\\").pop());
+
+                let modalWindow = document.getElementById("modal-wrapper");
+                modalWindow.addEventListener("click", closeModal);
+
+                function closeModal() {
+                modalWindow.classList.remove("visible");
+                }
+
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
