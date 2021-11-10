@@ -67,13 +67,13 @@
                                     <div class ="row">
                                         <div class="col-sm-3" style="margin-left: 5%; margin-top:1%">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="Male" value="male" >
+                                                <input class="form-check-input" type="radio" name="gender" id="cowok" value="male" >
                                                 <label class="form-check-label">Laki-laki</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-3"style="margin-left: 5%; margin-top:1%">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gender" id="Female" value="female" >
+                                                <input class="form-check-input" type="radio" name="gender" id="cewek" value="female" >
                                                 <label class="form-check-label">Perempuan</label>
                                             </div>
                                         </div>
@@ -180,7 +180,7 @@
                                         <div class="card card-preview">
                                             <div class="card-body row">
                                                 <div class="col-4">
-                                                    <img id="ava" class="img-fluid" alt="">
+                                                    <img id="previewAva" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="col-3">
                                                     <p class="mb-2">Nama Lengkap</p>
@@ -241,7 +241,7 @@
                 let cardBod = document.getElementById("previewBod");
                 cardBod.innerHTML = userBod;
 
-                let userRelg = document.getElementByName("agama").value;
+                let userRelg = document.getElementById("religion").value;
                 let cardRelg = document.getElementById("previewRelg");
                 cardRelg.innerHTML = userRelg;
 
