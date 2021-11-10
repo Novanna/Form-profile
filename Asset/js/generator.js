@@ -1,60 +1,108 @@
-// let openModalTrigger = document.getElementById("button");
+let openModalTrigger = document.getElementById("button");
 
-// openModalTrigger.addEventListener("click", openModal);
+openModalTrigger.addEventListener("click", () => {
+  generatePreview();
+});
 
-// function openModal() {
-//   document.getElementById("modal-wrapper").classList.add("visible");
-//   generatePreview();
-// }
+function generatePreview() {
+  let userNamel = document.getElementById("namaL").value;
+  let cardNamel = document.getElementById("previewNamel");
+  cardNamel.innerHTML = userNamel;
 
-// function generatePreview(){
-//     let userNamel = document.getElementById("namaL").value;
-//     let userNamep = document.getElementById("namaP").value;
-//     let userBirthplace = document.getElementById("birthplace").value;
-//     let userBod = document.getElementById("bod").value;
-//     let userRelg = document.getElementByName("agama").value;
-//     let userGender = document.getElemetByName("gender").value;
-//     let userLoc = document.getElementById("domisili").value;
-//     let userEduc = document.getElementByName("pendidikan").value;
-//     let userSchname = document.getElementById("schoolName").value;
-//     let userProglang = document.getElementByName("proglang").value;
-//     let userWanum = document.getElementById("wa-num").value;
-//     let userMail = document.getElementById("mail").value;
-//     let userAva = document.getElementById("ava").value;
+  let userNamep = document.getElementById("namaP").value;
+  let cardNamep = document.getElementById("previewNamep");
+  cardNamep.innerHTML = userNamep;
 
-//     let cardNamel = document.getElementById("previewNamel");
-//     let cardNamep = document.getElementById("previewNamep");
-//     let cardBirthplace = document.getElementById("previewBirthplace");
-//     let cardBod = document.getElementById("previewBod");
-//     let cardRelg = document.getElementById("previewRelg");
-//     let cardGender = document.getElementById("previewGender");
-//     let cardLoc = document.getElementById("previewLoc");
-//     let cardEduc = document.getElementById("previewEduc");
-//     let cardSchname = document.getElementById("previewSchname");
-//     let cardProglang = document.getElementById("previewProglang");
-//     let cardWanum = document.getElementById("previewWanum");
-//     let cardMail = document.getElementById("previewMail");
-//     let cardAva = document.getElementById("previewAva");
+  let userBirthplace = document.getElementById("birthplace").value;
+  let cardBirthplace = document.getElementById("previewBirthplace");
+  cardBirthplace.innerHTML = userBirthplace;
 
-//     cardNamel.innerHTML = userNamel;
-//     cardNamep.innerHTML = userNamep;
-//     cardBirthplace.innerHTML = userBirthplace;
-//     cardBod.innerHTML = userBod;
-//     cardRelg.innerHTML = userRelg;
-//     cardGender.innerHTML = userGender;
-//     cardLoc.innerHTML = userLoc;
-//     cardEduc.innerHTML = userEduc;
-//     cardSchname.innerHTML = userSchname;
-//     cardProglang.innerHTML = userProglang;
-//     cardWanum.innerHTML = userWanum;
-//     cardMail.innerHTML = userMail;
-//     cardAva.setAttribute("src","img/" + userAva.split("\\").pop());
+  let userBod = document.getElementById("bod").value;
+  let cardBod = document.getElementById("previewBod");
+  cardBod.innerHTML = userBod;
 
-// }
+  let userRelg = document.getElementById("religion").value;
+  let cardRelg = document.getElementById("previewRelg");
+  cardRelg.innerHTML = userRelg;
 
-// let modalWindow = document.getElementById("modal-wrapper");
-// modalWindow.addEventListener("click", closeModal);
+  let userEduc = document.getElementById("pendidikan").value;
+  let cardEduc = document.getElementById("previewEduc");
+  cardEduc.innerHTML = userEduc;
+  //GENDER//
+  let userGender1 = document.getElementById("Male").value;
+  if (userGender1 == "Male") {
+    let cardGender = document.getElementById("previewGender");
+    cardGender.innerHTML = "Laki-laki";
+  }
 
-// function closeModal() {
-//   modalWindow.classList.remove("visible");
-// }
+  let userGender2 = document.getElementById("Female").value;
+  if (userGender2 == "Female") {
+    let cardGender = document.getElementById("previewGender");
+    cardGender.innerHTML = "Perempuan";
+  }
+  /////
+  let userSchname = document.getElementById("schoolName").value;
+  let cardSchname = document.getElementById("previewSchname");
+  cardSchname.innerHTML = userSchname;
+  
+  let userWanum = document.getElementById("wa-num").value;
+  let cardWanum = document.getElementById("previewWanum");
+  cardWanum.innerHTML = userWanum; 
+
+  let userMail = document.getElementById("mail").value;
+  let cardMail = document.getElementById("previewMail");
+  cardMail.innerHTML = userMail;
+
+  let userCourse = document.getElementsByName("progLang");
+  for (let checkbox of userCourse) {
+    if(checkbox.checked)
+    let cardCourse = document.getElementById("previewCourse");
+      cardCourse.innerHTML(checkbox.value + " ");  
+  }
+  ///COURSE///
+  // let userCourse1 = document.getElementsById("c");
+  // if (userCourse1.checked == true) {
+  //   let cardCourse1 = document.getElementById("previewCourse1");
+  //   cardCourse1.innerHTML = "C";
+  // }
+  // else {
+  //   cardCourse1.innerHTML = "";
+  // }
+
+  // let userCourse2 = document.getElementsById("python");
+  // if (userCourse2.checked == true) {
+  //   let cardCourse2 = document.getElementById("previewCourse2");
+  //   cardCourse2.innerHTML = "Python";
+  // }
+  // else {
+  //   cardCourse2.innerHTML = "";
+  // }
+
+  // let userCourse3 = document.getElementsById("html");
+  // if (userCourse3.checked == true) {
+  //   let cardCourse3 = document.getElementById("previewCourse3");
+  //   cardCourse3.innerHTML = "HTML";
+  // }
+  // else {
+  //   cardCourse3.innerHTML = "";
+  // }
+
+  // let userCourse4 = document.getElementsById("java");
+  // if (userCourse4.checked == true) {
+  //   let cardCourse4 = document.getElementById("previewCourse4");
+  //   cardCourse4.innerHTML = "Java";
+  // }
+  // else {
+  //   cardCourse4.innerHTML = "";
+  // }
+  ////
+
+}
+
+function showPreview(event) {
+  if (event.target.files.length > 0) {
+    let src = URL.createObjectURL(event.target.files[0]);
+    let preview = document.getElementById("previewAva");
+    preview.src = src;
+  }
+}
