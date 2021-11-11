@@ -1,6 +1,24 @@
 let openModalTrigger = document.getElementById("button");
 
 openModalTrigger.addEventListener("click", () => {
+  // let cardCourse = document.getElementById("Course-checked");
+  // let text = '<span> Kamu memilih kelas pemrograman </span>';
+  // let listArray = [];
+  // let checkboxes = document.querySelectorAll('.checkbox');
+  // for(var checkbox of checkboxes) {
+  //   checkbox.addEventListener('click',function(){
+  //     if(this.Ischecked == true){
+  //       listArray.push(this.value);
+  //       cardCourse.innerHTML = text + listArray.join (",");
+  //       console.log(this.value);
+  //     }
+  //   else {
+  //       listArray = listArray.filter( e => e !== this.value);
+  //       cardCourse.innerHTML = text + listArray.join (",");
+  //       console.log("unchecked");
+  //     }
+  //   })
+  // }
   generatePreview();
 });
 
@@ -53,23 +71,84 @@ function generatePreview() {
   let cardMail = document.getElementById("previewMail");
   cardMail.innerHTML = userMail;
 
-  //let userCourseList = document.getElementsByName("progLang");
-  let cardCourse = document.getElementById("Course-checked");
-  let text = '<span> Kamu memilih kelas pemrograman </span>';
-  let listArray = [];
-  let checkboxes = document.querySelectorAll('.checkbox');
-  for (let checkbox of checkboxes) {
-      if(this.checked == true){
-        listArray.push(this.value);
-        cardCourse.innerHTML = text + listArray.join (' / ');
-        //console.log(this.value);
-      }
-      else {
-        listArray = listArray.filter( e => e !== this.value);
-        cardCourse.innerHTML = text + listArray.join (' / ');
-        //console.log("unchecked");
-      }
+ //COURSE//
+  let Course1 = document.getElementById("courseC");
+  let Course2 = document.getElementById("coursePython");
+  let Course3 = document.getElementById("courseHtml");
+  let Course4 = document.getElementById("courseJava");
+  var userCourse = document.getElementById("previewCourse");
+  
+  if (Course1.checked == true && Course2.checked == true && Course3.checked == true && Course4.checked == true ) {
+    userCourse.innerHTML = Course1.value + " , " + Course2.value + " , " + Course3.value + " , " + Course4.value;
   }
+  else if (Course1.checked == true && Course2.checked == true && Course3.checked == true && Course4.checked != true ) {
+    userCourse.innerHTML = Course1.value + " , " + Course2.value + " , " + Course3.value;
+  }
+  else if (Course1.checked == true && Course2.checked == true && Course3.checked != true && Course4.checked == true ) {
+    userCourse.innerHTML = Course1.value + " , " + Course2.value + " , " + Course4.value;
+  }
+  else if (Course1.checked == true && Course2.checked != true && Course3.checked == true && Course4.checked == true ) {
+    userCourse.innerHTML = Course1.value + " , " + Course3.value + " , " + Course4.value;
+  }
+  else if (Course1.checked != true && Course2.checked == true && Course3.checked == true && Course4.checked == true ) {
+    userCourse.innerHTML = Course2.value + " , " + Course3.value + " , " + Course4.value;
+  }
+  else if (Course1.checked == true && Course2.checked == true && Course3.checked != true && Course4.checked != true ) {
+    userCourse.innerHTML = Course1.value + " , " + Course2.value;
+  }
+  else if (Course1.checked == true && Course2.checked != true && Course3.checked == true && Course4.checked != true ) {
+    userCourse.innerHTML = Course1.value + " , " + Course3.value;
+  }
+  else if (Course1.checked == true && Course2.checked != true && Course3.checked != true && Course4.checked == true ) {
+    userCourse.innerHTML = Course1.value + " , " + Course4.value;
+  }
+  else if (Course1.checked != true && Course2.checked == true && Course3.checked == true && Course4.checked != true ) {
+    userCourse.innerHTML = Course2.value + " , " + Course3.value;
+  }
+  else if (Course1.checked != true && Course2.checked == true && Course3.checked != true && Course4.checked == true ) {
+    userCourse.innerHTML = Course2.value + " , " + Course4.value;
+  }
+  else if (Course1.checked == true && Course2.checked != true && Course3.checked == true && Course4.checked == true ) {
+    userCourse.innerHTML = Course3.value + " , " + Course4.value;
+  }
+  else if (Course1.checked != true && Course2.checked != true && Course3.checked != true && Course4.checked == true ) {
+    userCourse.innerHTML = Course4.value;
+  }
+  else if (Course1.checked == true && Course2.checked != true && Course3.checked != true && Course4.checked != true ) {
+    userCourse.innerHTML = Course1.value;
+  }
+  else if (Course1.checked != true && Course2.checked == true && Course3.checked != true && Course4.checked != true ) {
+    userCourse.innerHTML = Course2.value;
+  }
+  else if (Course1.checked != true && Course2.checked != true && Course3.checked == true && Course4.checked != true ) {
+    userCourse.innerHTML = Course3.value;
+  }
+  else {
+    userCourse.innerHTML = "Kamu tidak memilih kelas";
+  }
+
+
+  // var cardCourse = " ";
+  // if (Course1.checked == true) {
+  //   var userCourse1 = Course1.value;
+  //   cardCourse = userCourse1 + ",";
+  // }
+  // else if (Course2.checked == true) {
+  //   var userCourse2 = Course2.value;
+  //   cardCourseall = cardCourse + userCourse2 + ",";
+  // }
+  // else if (Course3.checked == true) {
+  //   var userCourse3 = Course3.value;
+  //   cardCourseall = cardCourse + userCourse3 + ",";
+  // }
+  // else if (Course4.checked == true) {
+  //   var userCourse4 = Course4.value;
+  //   cardCourseall = cardCourse + userCourse4 + ",";
+  // } 
+  // else {  
+  // return document.getElementById("previewCourse").innerHTML = "Kamu tidak memilih kelas apapun";  
+  // }  
+  // return document.getElementById("previewCourse").innerHTML = "Kamu memilih kelas pemrograman " + res ;  
 
 
 
