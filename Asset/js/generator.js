@@ -1,24 +1,6 @@
 let openModalTrigger = document.getElementById("button");
 
 openModalTrigger.addEventListener("click", () => {
-  // let cardCourse = document.getElementById("Course-checked");
-  // let text = '<span> Kamu memilih kelas pemrograman </span>';
-  // let listArray = [];
-  // let checkboxes = document.querySelectorAll('.checkbox');
-  // for(var checkbox of checkboxes) {
-  //   checkbox.addEventListener('click',function(){
-  //     if(this.Ischecked == true){
-  //       listArray.push(this.value);
-  //       cardCourse.innerHTML = text + listArray.join (",");
-  //       console.log(this.value);
-  //     }
-  //   else {
-  //       listArray = listArray.filter( e => e !== this.value);
-  //       cardCourse.innerHTML = text + listArray.join (",");
-  //       console.log("unchecked");
-  //     }
-  //   })
-  // }
   generatePreview();
 });
 
@@ -71,7 +53,7 @@ function generatePreview() {
   let cardMail = document.getElementById("previewMail");
   cardMail.innerHTML = userMail;
 
- //COURSE//
+ //COURSE BERHASIL//
   let Course1 = document.getElementById("courseC");
   let Course2 = document.getElementById("coursePython");
   let Course3 = document.getElementById("courseHtml");
@@ -126,6 +108,21 @@ function generatePreview() {
   else {
     userCourse.innerHTML = "Kamu tidak memilih kelas";
   }
+
+  //choose course
+  // let userCourse = document.getElementById("previewCourse");
+  // let listArray = [];
+  // let checkboxes = document.querySelectorAll('.checkbox');
+  // for(var checkbox of checkboxes) {
+  //     if(checkbox.Ischecked == true){
+  //       listArray.push(this.value);
+  //       userCourse.innerHTML = listArray.join (",");
+  //     }
+  //   else {
+  //       listArray = listArray.filter( e => e !== this.value);
+  //       userCourse.innerHTML = listArray.join (",");
+  //     }
+  // }
 
 
   // var cardCourse = " ";
