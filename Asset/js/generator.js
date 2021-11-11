@@ -53,13 +53,27 @@ function generatePreview() {
   let cardMail = document.getElementById("previewMail");
   cardMail.innerHTML = userMail;
 
-  let userCourse = document.getElementsByName("progLang");
-  for (let checkbox of userCourse) {
-    if(checkbox.checked)
-    let cardCourse = document.getElementById("previewCourse");
-      cardCourse.innerHTML(checkbox.value + " ");  
+  //let userCourseList = document.getElementsByName("progLang");
+  let cardCourse = document.getElementById("Course-checked");
+  let text = '<span> Kamu memilih kelas pemrograman </span>';
+  let listArray = [];
+  let checkboxes = document.querySelectorAll('.checkbox');
+  for (let checkbox of checkboxes) {
+      if(this.checked == true){
+        listArray.push(this.value);
+        cardCourse.innerHTML = text + listArray.join (' / ');
+        //console.log(this.value);
+      }
+      else {
+        listArray = listArray.filter( e => e !== this.value);
+        cardCourse.innerHTML = text + listArray.join (' / ');
+        //console.log("unchecked");
+      }
   }
-  ///COURSE///
+
+
+
+  ////COURSE///
   // let userCourse1 = document.getElementsById("c");
   // if (userCourse1.checked == true) {
   //   let cardCourse1 = document.getElementById("previewCourse1");
@@ -95,7 +109,7 @@ function generatePreview() {
   // else {
   //   cardCourse4.innerHTML = "";
   // }
-  ////
+  //
 
 }
 
