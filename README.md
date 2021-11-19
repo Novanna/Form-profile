@@ -10,4 +10,4 @@ The form have to included with: </br>
 Form view</br>
 <img src="Form-Modal-1.PNG"></img>
 Modal Result</br>
-<img src="Result-Modal.PNG"></img>
+<img src="Result-Modal.png"></img>
